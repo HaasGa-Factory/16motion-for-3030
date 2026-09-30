@@ -32,6 +32,20 @@ Pour construire un chariot complet :
 
 Les modèles, les STL, la nomenclature et les contrôles réalisés se trouvent dans le [dossier 3030](3030/README.md).
 
+### Impression directe avec Bambu Studio
+
+Le fichier [plaqueXY-entretoise.3mf](Bambustudio/plaqueXY-entretoise.3mf) est destiné aux utilisateurs qui souhaitent imprimer le chariot sans préparer eux-mêmes les plateaux :
+
+- plateau 1 : 2 plaques X et 2 plaques Y ;
+- plateau 2 : 16 entretoises nécessaires et 1 entretoise de secours ;
+- profil enregistré : Bambu Lab H2S, buse 0,4 mm, couche 0,20 mm, PETG ;
+- supports arborescents automatiques limités au plateau ;
+- plateau PEI texturé.
+
+Avant de lancer l'impression, ouvrir le 3MF dans Bambu Studio, sélectionner l'imprimante et le filament réellement utilisés, puis relancer le tranchage et contrôler l'aperçu. Les paramètres intégrés sont un point de départ validé pour cette préparation, pas un profil universel pour toutes les imprimantes ou tous les PETG.
+
+Un [texte de publication MakerWorld prêt à copier](MAKERWORLD_FR.md) est également fourni avec la description, les réglages, la nomenclature, les limites et l'attribution.
+
 ## Avertissement
 
 **L'auteur original précise qu'il n'est pas ingénieur mécanicien et que cette conception n'a pas fait l'objet d'essais professionnels. L'impression, l'assemblage et l'utilisation se font sous la responsabilité de l'utilisateur.**

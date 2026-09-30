@@ -14,6 +14,17 @@ Cette variante du projet [mosomate/16motion](https://github.com/mosomate/16motio
 
 STL en millimètres, à imprimer à 100 %. Déviation de surface 0,1 mm et angulaire 5°. Aucun STL n'a subi de mise à l'échelle globale. Ne pas imprimer quatre fois la même variante de plaque.
 
+## Projet Bambu Studio prêt à trancher
+
+Le fichier [plaqueXY-entretoise.3mf](../Bambustudio/plaqueXY-entretoise.3mf) regroupe toutes les pièces nécessaires :
+
+- **plateau 1** : 2 plaques X et 2 plaques Y ;
+- **plateau 2** : 17 entretoises, dont 16 pour le montage et 1 de secours.
+
+Réglages enregistrés dans le projet : **Bambu Lab H2S**, buse **0,4 mm**, couches de **0,20 mm**, **PETG**, deux parois, remplissage grille à 15 %, supports arborescents automatiques limités au plateau et plateau PEI texturé.
+
+Le 3MF contient la disposition des pièces et les paramètres de tranchage, mais pas un G-code universel. Avant impression, choisir dans Bambu Studio l'imprimante, la buse, le plateau et le filament réellement installés, relancer le tranchage puis vérifier chaque couche dans l'aperçu. Sur une autre imprimante, conserver les géométries et adapter les vitesses, températures, refroidissement et supports au matériel utilisé.
+
 ## Montage et quincaillerie
 
 La [notice en français](mesures_2983_2995/NOTICE_FR.md) précise les paramètres, l'orientation des plaques et le réglage de précharge. Pour un chariot : 16 roulements 684 (4 × 9 × 4 mm), 8 vis M4 × 40 mm, 8 vis M3 × 16 mm et 8 écrous M3 autofreinés. Les avant-trous fixes des plaques sont à tarauder M4 ; les fixations d'accessoires sont supplémentaires.
