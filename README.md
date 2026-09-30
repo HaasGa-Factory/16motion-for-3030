@@ -57,8 +57,6 @@ Pour la variante 3030 de ce dépôt, les axes de roulement sont des **vis M4 × 
 
 ## Conseils d'impression 3D
 
-L'auteur fournit également des STL pour les profilés de **20 mm**, **25 mm** et **40 mm** sur [Thingiverse](https://www.thingiverse.com/thing:6853255). Pour une autre section, utilisez le modèle paramétrique FreeCAD.
-
 Conseils de l'auteur :
 
 - matériau recommandé : **PETG** ;
