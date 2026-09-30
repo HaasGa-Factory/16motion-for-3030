@@ -1,4 +1,4 @@
-# 16Motion — adaptation pour profilé aluminium 3030
+# Chariot pour profilé aluminium 3030
 
 Ce dépôt est un fork du projet [mosomate/16motion](https://github.com/mosomate/16motion). Il ajoute une [adaptation mesurée pour un profilé 3030 de 29,83 × 29,95 mm](3030/README.md), avec les modèles FreeCAD, les STL prêts à imprimer, les vues d'assemblage et une animation du coulissement.
 
