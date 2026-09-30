@@ -1,100 +1,135 @@
-> **3030 measured adaptation / Adaptation 3030 :** [Models, printable parts, assembly and sliding animation / Modèles, STL, montage et animation](3030/README.md). Prototype for a 29.83 × 29.95 mm extrusion; see validation limits. Original project documentation follows.
+# 16Motion — adaptation pour profilé aluminium 3030
 
-# What is a 16Motion carriage?
-Configurable, 3D printable carriage for small (up to 40 mm wide) aluminium extrusions. A 16Motion carriage consists of four 3D printed plates put together around the extrusion and some **cheap**, **easily sourceable** hardwares including 684 (4x9x4) bearings, M3 and M4 screws and nuts.
-![16Motion main cover](https://raw.githubusercontent.com/mosomate/16motion/main/docs/cover.png)
-Each plate has eight attachment points to mount tools and accessories to the carriage using M3 screws and nuts. These eight points split up to two groups: four **plate attachment point**s (indicated by yellow arrows) and four **carriage attachment point**s (indicated by violet arrows).
+Ce dépôt est un fork du projet [mosomate/16motion](https://github.com/mosomate/16motion). Il ajoute une [adaptation mesurée pour un profilé 3030 de 29,83 × 29,95 mm](3030/README.md), avec les modèles FreeCAD, les STL prêts à imprimer, les vues d'assemblage et une animation du coulissement.
 
-**Carriage attachment points** go through at least two plates, therefore they give additional stuctural rigidity to the carriage. If you use only **plate attachment points**, it is recommended to put an M3x16 screw into a few of the **carriage attachment points** as well.
-Horizontal distance between the points is fixed at 23 mm and the vertical can be calculated with this formula: *vertical_distance = (extrusion_width + 9 mm) / 2*
-# Disclaimer
-**I'm not a professional mechanical engineer and haven't tested this design in a professional manner. I don't take any responsibilities for injuries and/or any damage caused by this design. Print and use it at you own risk!**
+> Cette variante correspond au profilé mesuré pour ce prototype. Tous les profilés appelés « 3030 » n'ont pas nécessairement la même section. Consultez les limites de validation avant impression.
 
-As steel bearings are rolling on aluminium, they might leave marks and/or wear out the extrusion over time. For **casual** usage it's not significant, but for **regular** usage you should consider using lubrication (e.g. a thin layer of lithium grease should do the job).
+![Animation du chariot 3030](3030/demonstration_client/Coulissement_3030_sans_texte.gif)
 
-If you can accept these conditions, then have fun building your carriages!
-# BOM for one plate
-For one of the four plates you need:
-- 3D printed plate **x1**
-- 3D printer bearing spacer **x4**
-- M4x(width of extrusion + 10 mm) screw **x2** *(e.g. if the extrusion is 20 mm width, screw length will be 20 mm + 10 mm = 30 mm)*
-- M3x16 screw **x2**
-- M3 self-locking nut **x2**
-- 684 bearing **x4**
-# 3D printing tips
-I uploaded precompiled STLs to Thingiverse for **20 mm**, **25 mm** and **40 mm** wide extrusions. Check them out [HERE](https://www.thingiverse.com/thing:6853255). If you can't find the suitable sizes to satisfy your needs, then proceed with the customization.
+## Qu'est-ce qu'un chariot 16Motion ?
 
-A few tips I picked up during development:
-- The recommended material is **PETG**
-- The plates require only *touching buildplate* kind of supports
-- 1 mm wall thickness and 0.5 mm top and bottom thickness worked fine for me
-# Customization and assembly
-You can find here the necessary steps for customizing the plates and assembling the carriage. Each step has a video tutorial at the end of it, don't forget to watch them on YouTube!
-## Plate customization
-- Open **FreeCAD** and open **Plate.FCStd**
-- If you see nothing but the model of a ring (spacer) you have to toggle the visibility of the plate. Right click on **Plate** object and select **Appearance...**. Then open the dropdown at **Document window** and select **Flat Lines** again
-- Right click on the **Plate** document and check **Skip recomputes**
-- Click on **Spreadsheet** and edit the **Ideal extrusion width** and **Actual extrusion width** parameters. **Ideal extrusion width** is the theoretical width of one side of the extrusion (e.g. 20 mm) and the **Actual extrusion width** is the measured size of it (e.g. 19.9 mm)
-- Right click on **Spreadsheet** and select **Recompute object**
-- Recompute all remaining objects as well (Plate, Spacer and Assets)
-- Select **Mesh** from the Workbench selector
-- Select **Plate** object by clicking on it and click on **Create mesh from shape...** button. My preferred settings for mesh creation are: **Surface deviation => 0.1 mm** and **Angular deviation => 5.00 ˚**
-- Create mesh from the **Spacer** object as well
-- Export meshes by right click on them and select **Export mesh...**
+16Motion est un chariot configurable et imprimable en 3D pour les petits profilés aluminium jusqu'à 40 mm de largeur. Un chariot se compose de quatre plaques imprimées, assemblées autour du profilé, et de composants faciles à trouver : roulements 684 (4 × 9 × 4 mm), vis M3 et M4 et écrous M3.
 
-[![Plate customization video](https://raw.githubusercontent.com/mosomate/16motion/main/docs/plate_customization_banner.png)](https://www.youtube.com/watch?v=9Bi0MCfb9tI "Plate customization | 16Motion Video Series")
-## Plate assembly
-- After 3D printing, drill an M4 thread into the **bottom left** and **top right** holes
-- Insert an **M3 self locking nut** into the socket below one of the preload levers
-- Insert an **M3x16** screw through the preload lever and drive it until it barely touches the lever
-- Repeat the step above for the other lever
+![Vue principale de 16Motion](https://raw.githubusercontent.com/mosomate/16motion/main/docs/cover.png)
 
-[![Plate assembly video](https://raw.githubusercontent.com/mosomate/16motion/main/docs/plate_assembly_banner.png)](https://www.youtube.com/watch?v=31CdhINwxhE "Plate assembly | 16Motion Video Series")
-## Carriage assembly
-After you got your four plates printed and assembled, proceed with assemling the carriage. Additinal materials:
-- 16 pcs of 3D printed spacers
-- 16 pcs of 684 bearings
-- 8 pcs of M4 screws with the length discussed in **BOM for one plate** section
+Chaque plaque possède huit points de fixation permettant de monter des outils et accessoires avec des vis et écrous M3. Ils sont répartis en deux groupes : quatre **points de fixation de plaque** indiqués par les flèches jaunes et quatre **points de fixation du chariot** indiqués par les flèches violettes.
 
-Assembly:
-- Put together the four plates. For this step it's nice to have long M3 screws or Allen wrenches poked through carriage attachment points
-- Screw in one M4 screw into the threaded hole of a plate until it reaches the other side of the plate
-- Put a spacer and a bearing in the route of the M4 screw
-- Drive the screw until it can hold the spacer and the bearing
-- Put an other pair of spacer and bearing in the route of the M4 screw and drive it all the way in
-- Tighten the M4 screw firmly
-- Repeat these steps for the remaining seven positions around the carriage
-- Remove the things you used to hold the plates together
+Les points de fixation du chariot traversent au moins deux plaques et augmentent donc la rigidité de l'ensemble. Si seuls les points de fixation de plaque sont utilisés, l'auteur recommande d'ajouter également des vis M3 × 16 dans quelques points de fixation du chariot.
 
-[![Carriage assembly video](https://raw.githubusercontent.com/mosomate/16motion/main/docs/carriage_assembly_banner.png)](https://www.youtube.com/watch?v=4gjbtIjSXgw "Carriage assembly | 16Motion Video Series")
-## Preload settings
-Here comes the tricky part. One rule: *No play, no too much tension!* Try to pay attention for having roughly the same tension for a pair of preload levers as you can see here:
+La distance horizontale entre les points est fixée à 23 mm. La distance verticale se calcule ainsi :
 
-![Preload comparison](https://raw.githubusercontent.com/mosomate/16motion/main/docs/preload_comparison.png)
+`distance verticale = (largeur du profilé + 9 mm) / 2`
 
-My best practice to set the correct amount of preload:
-- Get a piece of the extrusion the carriage was made for
-- Sand down the edges on one end of the extrusion
-- Slide the carriage onto the extrusion and place the extrusion on a flat surface vertically
-- Start tightening the screws of one pair of the preload levers in small increments
-- Check if you can feel any resistance when sliding off and on the carriage again
-- Stop tightening the screws if you can feel a slight resistance when sliding the carriage onto the extrusion
-- Repeat this process for the rest of the preload levers
+## Adaptation 3030 de ce fork
 
-Important notes: 
-- The carriage should fall through the extrusion by it's own weight when stands vertically. If it's stuck, you applied too much preload!
-- It's completely normal if a few of the bearings are not rolling when the carriage is moving
-- I hope the video describes the process well 
+La section du profilé utilisé pour cette adaptation a été mesurée à **29,83 mm sur l'axe X** et **29,95 mm sur l'axe Y**. Ces deux valeurs restent séparées dans les modèles : aucune moyenne ni mise à l'échelle globale des STL n'a été appliquée.
 
-[![Preload settings video](https://raw.githubusercontent.com/mosomate/16motion/main/docs/preload_settings_banner.png)](https://www.youtube.com/watch?v=hf6m5ihSEW8 "Preload settings | 16Motion Video Series")
-# License
-Shield: [![CC BY-NC 4.0][cc-by-nc-shield]][cc-by-nc]
+Pour construire un chariot complet :
 
-This work is licensed under a
-[Creative Commons Attribution-NonCommercial 4.0 International License][cc-by-nc].
+- imprimer **2 plaques X** depuis `Plaque_X_2983.stl` ;
+- imprimer **2 plaques Y** depuis `Plaque_Y_2995.stl` ;
+- imprimer **16 entretoises** depuis `Entretoise.stl`.
+
+Les modèles, les STL, la nomenclature et les contrôles réalisés se trouvent dans le [dossier 3030](3030/README.md).
+
+## Avertissement
+
+**L'auteur original précise qu'il n'est pas ingénieur mécanicien et que cette conception n'a pas fait l'objet d'essais professionnels. L'impression, l'assemblage et l'utilisation se font sous la responsabilité de l'utilisateur.**
+
+Les roulements en acier roulent directement sur l'aluminium. Ils peuvent marquer ou user le profilé avec le temps. Pour une utilisation occasionnelle, l'effet peut rester limité. Pour une utilisation régulière, l'auteur conseille une légère lubrification, par exemple une fine couche de graisse au lithium.
+
+Les vérifications CAO de cette variante ne constituent pas une validation de la capacité de charge, de l'usure ou du comportement mécanique réel. Un premier montage imprimé doit confirmer le coulissement, la précharge et l'absence de point dur sur toute la course.
+
+## Nomenclature pour une plaque
+
+Pour chacune des quatre plaques :
+
+- 1 plaque imprimée en 3D ;
+- 4 entretoises de roulement imprimées en 3D ;
+- 2 vis M4 de longueur `largeur nominale du profilé + 10 mm` ;
+- 2 vis M3 × 16 mm ;
+- 2 écrous M3 autofreinés ;
+- 4 roulements 684 (4 × 9 × 4 mm).
+
+Pour la variante 3030 de ce dépôt, les axes de roulement sont des **vis M4 × 40 mm**.
+
+## Conseils d'impression 3D
+
+L'auteur fournit également des STL pour les profilés de **20 mm**, **25 mm** et **40 mm** sur [Thingiverse](https://www.thingiverse.com/thing:6853255). Pour une autre section, utilisez le modèle paramétrique FreeCAD.
+
+Conseils de l'auteur :
+
+- matériau recommandé : **PETG** ;
+- supports limités aux zones en contact avec le plateau ;
+- épaisseur de paroi de 1 mm ;
+- épaisseur supérieure et inférieure de 0,5 mm.
+
+Les STL de la variante 3030 sont exportés en millimètres, à l'échelle 100 %, avec une déviation de surface de **0,1 mm** et une déviation angulaire de **5°**.
+
+## Personnalisation dans FreeCAD
+
+1. Ouvrir `Plate.FCStd` dans FreeCAD.
+2. Si seule l'entretoise apparaît, afficher l'objet **Plate**. Dans ses propriétés d'apparence, sélectionner à nouveau le mode **Flat Lines**.
+3. Activer temporairement **Skip recomputes** sur le document pendant la modification.
+4. Dans **Spreadsheet**, modifier :
+   - **Ideal extrusion width** : largeur nominale d'un côté du profilé ;
+   - **Actual extrusion width** : largeur réellement mesurée.
+5. Recalculer **Spreadsheet**, puis les objets dépendants **Plate**, **Spacer** et **Assets**.
+6. Dans l'atelier **Mesh**, créer un maillage de **Plate** avec une déviation de surface de 0,1 mm et une déviation angulaire de 5°.
+7. Créer également le maillage de **Spacer**, puis exporter les deux maillages.
+
+Pour un profilé dont les deux dimensions mesurées diffèrent, produire deux variantes distinctes comme dans le [dossier 3030](3030/README.md). Ne pas utiliser une moyenne arbitraire.
+
+[![Vidéo de personnalisation de la plaque](https://raw.githubusercontent.com/mosomate/16motion/main/docs/plate_customization_banner.png)](https://www.youtube.com/watch?v=9Bi0MCfb9tI "Personnalisation de la plaque | Série vidéo 16Motion")
+
+## Préparation d'une plaque
+
+1. Après impression, tarauder en M4 les trous fixes **inférieur gauche** et **supérieur droit**.
+2. Insérer un écrou M3 autofreiné dans le logement situé sous un levier de précharge.
+3. Introduire une vis M3 × 16 à travers le levier et la visser jusqu'à ce qu'elle touche à peine le levier.
+4. Répéter l'opération pour l'autre levier.
+
+[![Vidéo d'assemblage d'une plaque](https://raw.githubusercontent.com/mosomate/16motion/main/docs/plate_assembly_banner.png)](https://www.youtube.com/watch?v=31CdhINwxhE "Assemblage d'une plaque | Série vidéo 16Motion")
+
+## Assemblage du chariot
+
+Pour le chariot complet, prévoir 16 entretoises imprimées, 16 roulements 684 et 8 vis M4 de la longueur indiquée dans la nomenclature.
+
+1. Emboîter les quatre plaques. De longues vis M3 ou des clés Allen placées temporairement dans les points de fixation du chariot facilitent l'alignement.
+2. Visser une vis M4 dans le trou taraudé d'une plaque jusqu'à ce qu'elle atteigne l'autre côté.
+3. Placer une entretoise et un roulement sur le trajet de la vis M4.
+4. Avancer la vis jusqu'à maintenir ce premier ensemble.
+5. Ajouter une seconde entretoise et un second roulement, puis visser complètement l'axe.
+6. Serrer la vis M4 sans écraser le plastique.
+7. Répéter l'opération aux sept autres positions.
+8. Retirer les vis ou clés utilisées temporairement pour maintenir l'alignement.
+
+[![Vidéo d'assemblage du chariot](https://raw.githubusercontent.com/mosomate/16motion/main/docs/carriage_assembly_banner.png)](https://www.youtube.com/watch?v=4gjbtIjSXgw "Assemblage du chariot | Série vidéo 16Motion")
+
+## Réglage de la précharge
+
+La règle de l'auteur est simple : **aucun jeu, mais pas de tension excessive**. Régler les deux leviers d'une même paire avec une précharge aussi équilibrée que possible.
+
+![Comparaison de la précharge](https://raw.githubusercontent.com/mosomate/16motion/main/docs/preload_comparison.png)
+
+1. Ébavurer légèrement les arêtes d'une extrémité du profilé.
+2. Engager le chariot sur le profilé.
+3. Serrer les vis d'une paire de leviers par petits incréments.
+4. Faire coulisser le chariot après chaque ajustement.
+5. Arrêter dès qu'une légère résistance apparaît à l'engagement.
+6. Répéter pour les autres paires de leviers.
+
+Le chariot doit encore descendre sous son propre poids lorsque le profilé est placé verticalement. S'il reste bloqué, la précharge est trop importante. Il est normal que certains roulements ne tournent pas en permanence pendant le déplacement.
+
+[![Vidéo de réglage de la précharge](https://raw.githubusercontent.com/mosomate/16motion/main/docs/preload_settings_banner.png)](https://www.youtube.com/watch?v=hf6m5ihSEW8 "Réglage de la précharge | Série vidéo 16Motion")
+
+## Licence et attribution
+
+Conception originale : [mosomate/16motion](https://github.com/mosomate/16motion).
+
+Ce travail est distribué sous licence [Creative Commons Attribution — Pas d'utilisation commerciale 4.0 International][cc-by-nc]. Cette adaptation conserve la même licence et n'accorde aucun droit supplémentaire.
 
 [![CC BY-NC 4.0][cc-by-nc-image]][cc-by-nc]
 
 [cc-by-nc]: https://creativecommons.org/licenses/by-nc/4.0/
 [cc-by-nc-image]: https://licensebuttons.net/l/by-nc/4.0/88x31.png
-[cc-by-nc-shield]: https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg
