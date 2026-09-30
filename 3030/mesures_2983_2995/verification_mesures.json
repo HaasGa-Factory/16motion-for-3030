@@ -1,0 +1,760 @@
+{
+  "mesures_mm": {
+    "X": 29.83,
+    "Y": 29.95,
+    "G": 8.07,
+    "P_gauche": 8.17,
+    "P_droite": 8.17
+  },
+  "hypotheses": [
+    "G et P identiques sur les faces pour estimer les plats; coins symetriques",
+    "appui partiel accepte pour le prototype; pas de validation mecanique"
+  ],
+  "source_sha256": "93ef07982460cdfdb4be5c1377a2e059374abba6c8149effdfcec16d317e78c3",
+  "pieces": {
+    "Plaque_X_2983": {
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "dimensions_mm": [
+        90.94999999999999,
+        48.23,
+        8.000000000000002
+      ],
+      "volume_mm3": 14068.364300568337,
+      "quantity": 2,
+      "mesh_closed": true,
+      "mesh_components": 1,
+      "facets": 32182,
+      "mesh_dimensions_mm": [
+        90.95000076293945,
+        48.22998046875,
+        8.0
+      ],
+      "linear_deflection_mm": 0.1,
+      "angular_deflection_deg": 5,
+      "volume_relative_error": 6.449003586724047e-05
+    },
+    "Entretoise": {
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "dimensions_mm": [
+        8.0,
+        8.0,
+        3.0
+      ],
+      "volume_mm3": 95.96120424096166,
+      "quantity": 16,
+      "mesh_closed": true,
+      "mesh_components": 1,
+      "facets": 2308,
+      "mesh_dimensions_mm": [
+        8.0,
+        8.0,
+        3.0
+      ],
+      "linear_deflection_mm": 0.1,
+      "angular_deflection_deg": 5,
+      "volume_relative_error": 0.0004092886860957041
+    },
+    "Plaque_Y_2995": {
+      "valid": true,
+      "closed": true,
+      "solids": 1,
+      "dimensions_mm": [
+        90.95,
+        48.35,
+        8.000000000000002
+      ],
+      "volume_mm3": 14080.919300209614,
+      "quantity": 2,
+      "mesh_closed": true,
+      "mesh_components": 1,
+      "facets": 32178,
+      "mesh_dimensions_mm": [
+        90.95000076293945,
+        48.349979400634766,
+        8.0
+      ],
+      "linear_deflection_mm": 0.1,
+      "angular_deflection_deg": 5,
+      "volume_relative_error": 6.688207829587013e-05
+    }
+  },
+  "axis_mapping": "photo X = CAO Y; photo Y = CAO Z; CAO X = longueur du rail",
+  "assembly_counts": {
+    "profile": 1,
+    "plate": 4,
+    "bearing": 16,
+    "spacer": 16,
+    "screw": 8,
+    "adjust": 8
+  },
+  "rail_checks": [
+    {
+      "name": "Plaque1",
+      "category": "plate",
+      "distance_mm": 1.0250000000000021,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_0_0",
+      "category": "spacer",
+      "distance_mm": 0.6999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_0_0",
+      "category": "bearing",
+      "distance_mm": 0.1999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_0_1",
+      "category": "spacer",
+      "distance_mm": 0.6999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_0_1",
+      "category": "bearing",
+      "distance_mm": 0.1999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_0_2",
+      "category": "spacer",
+      "distance_mm": 0.4499999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_0_2",
+      "category": "bearing",
+      "distance_mm": 0.0,
+      "overlap_mm3": 0.17858699938595524
+    },
+    {
+      "name": "VisM4x40_0_2",
+      "category": "screw",
+      "distance_mm": 2.4499999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_0_3",
+      "category": "spacer",
+      "distance_mm": 0.4499999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_0_3",
+      "category": "bearing",
+      "distance_mm": 7.105427357601002e-15,
+      "overlap_mm3": 0.1785869993859556
+    },
+    {
+      "name": "VisM4x40_0_3",
+      "category": "screw",
+      "distance_mm": 2.4499999999999957,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_0_0",
+      "category": "adjust",
+      "distance_mm": 2.274999999999998,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_0_1",
+      "category": "adjust",
+      "distance_mm": 2.275000000000005,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Plaque2",
+      "category": "plate",
+      "distance_mm": 1.024999999999995,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_1_0",
+      "category": "spacer",
+      "distance_mm": 0.6999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_1_0",
+      "category": "bearing",
+      "distance_mm": 0.1999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_1_1",
+      "category": "spacer",
+      "distance_mm": 0.6999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_1_1",
+      "category": "bearing",
+      "distance_mm": 0.1999999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_1_2",
+      "category": "spacer",
+      "distance_mm": 0.4499999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_1_2",
+      "category": "bearing",
+      "distance_mm": 0.0,
+      "overlap_mm3": 0.17858699938595532
+    },
+    {
+      "name": "VisM4x40_1_2",
+      "category": "screw",
+      "distance_mm": 2.4499999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_1_3",
+      "category": "spacer",
+      "distance_mm": 0.4499999999999993,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_1_3",
+      "category": "bearing",
+      "distance_mm": 7.105427357601002e-15,
+      "overlap_mm3": 0.1785869993859555
+    },
+    {
+      "name": "VisM4x40_1_3",
+      "category": "screw",
+      "distance_mm": 2.4499999999999886,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_1_0",
+      "category": "adjust",
+      "distance_mm": 2.2749999999999986,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_1_1",
+      "category": "adjust",
+      "distance_mm": 2.2749999999999986,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Plaque3",
+      "category": "plate",
+      "distance_mm": 1.0849999999999937,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_2_0",
+      "category": "spacer",
+      "distance_mm": 0.6999999999999957,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_2_0",
+      "category": "bearing",
+      "distance_mm": 0.19999999999999574,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_2_1",
+      "category": "spacer",
+      "distance_mm": 0.700000000000002,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_2_1",
+      "category": "bearing",
+      "distance_mm": 0.20000000000000195,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_2_2",
+      "category": "spacer",
+      "distance_mm": 0.44999999999999574,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_2_2",
+      "category": "bearing",
+      "distance_mm": 3.972054645195637e-15,
+      "overlap_mm3": 0.17858699938597844
+    },
+    {
+      "name": "VisM4x40_2_2",
+      "category": "screw",
+      "distance_mm": 2.4499999999999886,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_2_3",
+      "category": "spacer",
+      "distance_mm": 0.44999999999999485,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_2_3",
+      "category": "bearing",
+      "distance_mm": 1.7763568394002505e-15,
+      "overlap_mm3": 0.17858699938597672
+    },
+    {
+      "name": "VisM4x40_2_3",
+      "category": "screw",
+      "distance_mm": 2.4499999999999966,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_2_0",
+      "category": "adjust",
+      "distance_mm": 2.3350000000000044,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_2_1",
+      "category": "adjust",
+      "distance_mm": 2.3349999999999973,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Plaque4",
+      "category": "plate",
+      "distance_mm": 1.0849999999999937,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_3_0",
+      "category": "spacer",
+      "distance_mm": 0.6999999999999948,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_3_0",
+      "category": "bearing",
+      "distance_mm": 0.19999999999999485,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_3_1",
+      "category": "spacer",
+      "distance_mm": 0.6999999999999957,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_3_1",
+      "category": "bearing",
+      "distance_mm": 0.19999999999999574,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_3_2",
+      "category": "spacer",
+      "distance_mm": 0.45000000000000195,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_3_2",
+      "category": "bearing",
+      "distance_mm": 0.0,
+      "overlap_mm3": 0.17858699938593886
+    },
+    {
+      "name": "VisM4x40_3_2",
+      "category": "screw",
+      "distance_mm": 2.4500000000000037,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Entretoise_3_3",
+      "category": "spacer",
+      "distance_mm": 0.44999999999999574,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "Roulement684_3_3",
+      "category": "bearing",
+      "distance_mm": 0.0,
+      "overlap_mm3": 0.17858699938597797
+    },
+    {
+      "name": "VisM4x40_3_3",
+      "category": "screw",
+      "distance_mm": 2.4499999999999886,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_3_0",
+      "category": "adjust",
+      "distance_mm": 2.3350000000000044,
+      "overlap_mm3": 0.0
+    },
+    {
+      "name": "ReglageM3x16_3_1",
+      "category": "adjust",
+      "distance_mm": 2.3349999999999973,
+      "overlap_mm3": 0.0
+    }
+  ],
+  "interferences": [
+    {
+      "a": "Plaque1",
+      "b": "VisM4x40_0_2",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925724552
+    },
+    {
+      "a": "Plaque1",
+      "b": "VisM4x40_0_3",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925724534
+    },
+    {
+      "a": "Plaque1",
+      "b": "VisM4x40_1_2",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 1.3909024013768947
+    },
+    {
+      "a": "Plaque1",
+      "b": "VisM4x40_1_3",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 1.3909024013771105
+    },
+    {
+      "a": "Entretoise_0_0",
+      "b": "VisM4x40_1_3",
+      "categories": [
+        "spacer",
+        "screw"
+      ],
+      "volume_mm3": 0.75731167344392
+    },
+    {
+      "a": "Roulement684_0_0",
+      "b": "VisM4x40_1_3",
+      "categories": [
+        "bearing",
+        "screw"
+      ],
+      "volume_mm3": 3.9973943053217633
+    },
+    {
+      "a": "Entretoise_0_1",
+      "b": "VisM4x40_1_2",
+      "categories": [
+        "spacer",
+        "screw"
+      ],
+      "volume_mm3": 0.7573116734437433
+    },
+    {
+      "a": "Roulement684_0_1",
+      "b": "VisM4x40_1_2",
+      "categories": [
+        "bearing",
+        "screw"
+      ],
+      "volume_mm3": 3.997394305321507
+    },
+    {
+      "a": "VisM4x40_0_2",
+      "b": "Plaque2",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.3909024013769562
+    },
+    {
+      "a": "VisM4x40_0_2",
+      "b": "Entretoise_1_1",
+      "categories": [
+        "screw",
+        "spacer"
+      ],
+      "volume_mm3": 0.7573116734437757
+    },
+    {
+      "a": "VisM4x40_0_2",
+      "b": "Roulement684_1_1",
+      "categories": [
+        "screw",
+        "bearing"
+      ],
+      "volume_mm3": 3.997394305321575
+    },
+    {
+      "a": "VisM4x40_0_2",
+      "b": "Plaque4",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.1864325702336478
+    },
+    {
+      "a": "VisM4x40_0_3",
+      "b": "Plaque2",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.3909024013771434
+    },
+    {
+      "a": "VisM4x40_0_3",
+      "b": "Entretoise_1_0",
+      "categories": [
+        "screw",
+        "spacer"
+      ],
+      "volume_mm3": 0.7573116734438805
+    },
+    {
+      "a": "VisM4x40_0_3",
+      "b": "Roulement684_1_0",
+      "categories": [
+        "screw",
+        "bearing"
+      ],
+      "volume_mm3": 3.997394305321694
+    },
+    {
+      "a": "VisM4x40_0_3",
+      "b": "Plaque3",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.1864325702335687
+    },
+    {
+      "a": "Plaque2",
+      "b": "VisM4x40_1_2",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925724614
+    },
+    {
+      "a": "Plaque2",
+      "b": "VisM4x40_1_3",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925725156
+    },
+    {
+      "a": "VisM4x40_1_2",
+      "b": "Plaque3",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.1864325702336767
+    },
+    {
+      "a": "VisM4x40_1_3",
+      "b": "Plaque4",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.1864325702343184
+    },
+    {
+      "a": "Plaque3",
+      "b": "VisM4x40_2_2",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925725427
+    },
+    {
+      "a": "Plaque3",
+      "b": "VisM4x40_2_3",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925725103
+    },
+    {
+      "a": "Plaque3",
+      "b": "VisM4x40_3_2",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 1.3909024013770237
+    },
+    {
+      "a": "Plaque3",
+      "b": "VisM4x40_3_3",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 1.3909024013773252
+    },
+    {
+      "a": "Entretoise_2_0",
+      "b": "VisM4x40_3_3",
+      "categories": [
+        "spacer",
+        "screw"
+      ],
+      "volume_mm3": 0.757311673443887
+    },
+    {
+      "a": "Roulement684_2_0",
+      "b": "VisM4x40_3_3",
+      "categories": [
+        "bearing",
+        "screw"
+      ],
+      "volume_mm3": 3.9973943053217473
+    },
+    {
+      "a": "Entretoise_2_1",
+      "b": "VisM4x40_3_2",
+      "categories": [
+        "spacer",
+        "screw"
+      ],
+      "volume_mm3": 0.7573116734438728
+    },
+    {
+      "a": "Roulement684_2_1",
+      "b": "VisM4x40_3_2",
+      "categories": [
+        "bearing",
+        "screw"
+      ],
+      "volume_mm3": 3.9973943053215195
+    },
+    {
+      "a": "VisM4x40_2_2",
+      "b": "Plaque4",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.3909024013770865
+    },
+    {
+      "a": "VisM4x40_2_2",
+      "b": "Entretoise_3_1",
+      "categories": [
+        "screw",
+        "spacer"
+      ],
+      "volume_mm3": 0.7573116734438701
+    },
+    {
+      "a": "VisM4x40_2_2",
+      "b": "Roulement684_3_1",
+      "categories": [
+        "screw",
+        "bearing"
+      ],
+      "volume_mm3": 3.9973943053217367
+    },
+    {
+      "a": "VisM4x40_2_3",
+      "b": "Plaque4",
+      "categories": [
+        "screw",
+        "plate"
+      ],
+      "volume_mm3": 1.390902401377109
+    },
+    {
+      "a": "VisM4x40_2_3",
+      "b": "Entretoise_3_0",
+      "categories": [
+        "screw",
+        "spacer"
+      ],
+      "volume_mm3": 0.7573116734439965
+    },
+    {
+      "a": "VisM4x40_2_3",
+      "b": "Roulement684_3_0",
+      "categories": [
+        "screw",
+        "bearing"
+      ],
+      "volume_mm3": 3.9973943053214978
+    },
+    {
+      "a": "Plaque4",
+      "b": "VisM4x40_3_2",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925723655
+    },
+    {
+      "a": "Plaque4",
+      "b": "VisM4x40_3_3",
+      "categories": [
+        "plate",
+        "screw"
+      ],
+      "volume_mm3": 3.7663768925724366
+    }
+  ],
+  "flat_support_estimate": {
+    "X": {
+      "K_mm": 2.709999999999999,
+      "bearing_band_from_edge_mm": [
+        1.9149999999999991,
+        5.914999999999999
+      ],
+      "flat_overlap_mm": 3.205,
+      "assumptions": "same measured G/P on all faces; symmetric corners; axial stack of previous presentation"
+    },
+    "Y": {
+      "K_mm": 2.7699999999999996,
+      "bearing_band_from_edge_mm": [
+        1.9749999999999996,
+        5.975
+      ],
+      "flat_overlap_mm": 3.205,
+      "assumptions": "same measured G/P on all faces; symmetric corners; axial stack of previous presentation"
+    }
+  },
+  "reopen_checks": {
+    "Assemblage_mesure.FCStd": [],
+    "Eclate_mesure.FCStd": [],
+    "Plaque_X_2983.FCStd": [],
+    "Plaque_Y_2995.FCStd": []
+  }
+}

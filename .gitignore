@@ -1,2 +1,21 @@
 *.FCBak
 *.stl
+
+# Measured printable variants are intentional deliverables
+!3030/mesures_2983_2995/Plaque_X_2983.stl
+!3030/mesures_2983_2995/Plaque_Y_2995.stl
+!3030/mesures_2983_2995/Entretoise.stl
+
+# Local FreeCAD/runtime files
+*.FCStd1
+*.FCStd[0-9]*
+*.FCBak
+*.cfg
+*.log
+*.token
+__pycache__/
+.venv/
+.codex-remote-attachments/
+3030/demonstration_client/frames/
+3030/demonstration_client/export.*
+3030/demonstration_client/error.txt

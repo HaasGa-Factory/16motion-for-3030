@@ -1,3 +1,5 @@
+> **3030 measured adaptation / Adaptation 3030 :** [Models, printable parts, assembly and sliding animation / Modèles, STL, montage et animation](3030/README.md). Prototype for a 29.83 × 29.95 mm extrusion; see validation limits. Original project documentation follows.
+
 # What is a 16Motion carriage?
 Configurable, 3D printable carriage for small (up to 40 mm wide) aluminium extrusions. A 16Motion carriage consists of four 3D printed plates put together around the extrusion and some **cheap**, **easily sourceable** hardwares including 684 (4x9x4) bearings, M3 and M4 screws and nuts.
 ![16Motion main cover](https://raw.githubusercontent.com/mosomate/16motion/main/docs/cover.png)

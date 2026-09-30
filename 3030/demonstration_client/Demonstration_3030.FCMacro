@@ -1,0 +1,143 @@
+"""Presentation cinematique du modele mesure. Executer dans FreeCAD."""
+import math, json, hashlib, traceback
+from pathlib import Path
+import FreeCAD as A
+import FreeCADGui as G
+import Part
+from PySide import QtCore, QtWidgets
+
+OUT = Path(__file__).resolve().parent
+SOURCE = OUT.parent / 'mesures_2983_2995' / 'Assemblage_mesure.FCStd'
+EXPORT = (OUT / 'export.request').exists()
+try:
+    original_hash = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
+    source = A.openDocument(str(SOURCE))
+    doc = A.newDocument('Demonstration3030')
+    doc.Label = '16motion — demonstration du coulissement'
+    motion = doc.addObject('App::FeaturePython', 'Commande')
+    motion.addProperty('App::PropertyDistance', 'Position', 'Animation').Position = 0
+    motion.addProperty('App::PropertyString', 'Limites', 'Animation').Limites = 'Translation imposee ; ni efforts, ni frottement, ni deformation simules'
+    carriage = doc.addObject('App::Part', 'Chariot')
+    carriage.setExpression('Placement.Base.x', 'Commande.Position')
+    colors = {'plate':(0.09,0.43,0.72), 'spacer':(1.0,0.67,0.13),
+              'bearing':(0.73,0.77,0.82), 'screw':(0.23,0.27,0.32), 'adjust':(0.92,0.39,0.12)}
+    counts = {}
+    original_bounds = []
+    for item in source.Assemble.Group:
+        cat = item.Categorie
+        if cat == 'profile':
+            continue
+        part = doc.addObject('PartDesign::Feature', item.Name)
+        part.Label = item.Label
+        part.Shape = item.Shape.copy()
+        assert part.Shape.isValid()
+        carriage.addObject(part)
+        part.ViewObject.ShapeColor = colors[cat]
+        part.ViewObject.LineColor = (0.12,0.17,0.22)
+        part.ViewObject.DisplayMode = 'Flat Lines'
+        counts[cat] = counts.get(cat, 0) + 1
+        original_bounds.append((part.Shape.BoundBox.XMin, part.Shape.BoundBox.XMax))
+    assert counts == {'plate':4, 'spacer':16, 'bearing':16, 'screw':8, 'adjust':8}, counts
+    rail = doc.addObject('PartDesign::Feature','Profile3030')
+    rail.Label = '3030 — enveloppe 29,83 x 29,95 — longueur illustrative 320 mm'
+    rail.Shape = Part.makeBox(320,29.83,29.95,A.Vector(-164.6,-29.83/2,-16-29.95/2))
+    rail.ViewObject.ShapeColor = (0.72,0.76,0.80)
+    rail.ViewObject.LineColor = (0.30,0.35,0.40)
+    rail.ViewObject.DisplayMode = 'Flat Lines'
+    xmin = min(b[0] for b in original_bounds)
+    xmax = max(b[1] for b in original_bounds)
+    assert xmin-90 > -164.6 and xmax+90 < 155.4
+    positions = []
+    for x in [-90, 0, 90]:
+        motion.Position = x
+        doc.recompute()
+        assert abs(carriage.Placement.Base.x-x) < 1e-8
+        positions.append({'position_mm':x, 'carriage_bounds_x_mm':[xmin+x,xmax+x]})
+    motion.Position = 0
+    doc.recompute()
+    A.closeDocument(source.Name)
+    G.activeDocument().activeView().viewAxonometric()
+    view = G.activeDocument().activeView()
+    view.fitAll()
+    camera = view.getCameraOrientation()
+    dialog = QtWidgets.QDialog(G.getMainWindow())
+    dialog.setWindowTitle('16motion | Demonstration du coulissement')
+    layout = QtWidgets.QVBoxLayout(dialog)
+    label = QtWidgets.QLabel('Course illustree : 180 mm | Rail : 320 mm')
+    layout.addWidget(label)
+    slider = QtWidgets.QSlider(QtCore.Qt.Horizontal)
+    slider.setRange(-900,900)
+    layout.addWidget(slider)
+    button = QtWidgets.QPushButton('Lecture / pause')
+    layout.addWidget(button)
+    transparent = QtWidgets.QCheckBox('Plaques transparentes : voir les roulements')
+    layout.addWidget(transparent)
+    layout.addWidget(QtWidgets.QLabel('Translation imposee. Section simplifiee.\nLe comportement reel reste a valider sur le prototype.'))
+    def position(value):
+        motion.Position = value/10
+        doc.recompute()
+        label.setText('Position : %+.1f mm | Course : 180 mm' % (value/10))
+    slider.valueChanged.connect(position)
+    def transparency(value):
+        for p in carriage.Group:
+            if p.Name.startswith('Plaque'):
+                p.ViewObject.Transparency = 75 if value else 0
+    transparent.toggled.connect(transparency)
+    timer = QtCore.QTimer(dialog)
+    phase = [0.0]
+    def tick():
+        phase[0] += 0.03*2*math.pi/8
+        slider.setValue(round(900*math.sin(phase[0])))
+    timer.timeout.connect(tick)
+    button.clicked.connect(lambda: timer.stop() if timer.isActive() else timer.start(30))
+    dialog.finished.connect(lambda _: timer.stop())
+    G._demo3030 = (dialog, timer)
+    def ready():
+        try:
+            view.fitAll()
+            node = view.getCameraOrientation()
+            from pivy import coin
+            cam = view.getCameraNode()
+            cam.nearDistance.setValue(1)
+            cam.farDistance.setValue(2000)
+            doc.recompute()
+            doc.saveAs(str(OUT/'Demonstration_3030.FCStd'))
+            report = {'source_sha256':original_hash,'counts':counts,'positions':positions,
+                      'rail_length_mm':320,'travel_mm':180,'section_mm':[29.83,29.95],
+                      'type':'translation imposee sans solveur physique',
+                      'bearing_rotation':'non animee ; roulements representes par anneaux',
+                      'source_unchanged': hashlib.sha256(SOURCE.read_bytes()).hexdigest()==original_hash}
+            assert report['source_unchanged']
+            (OUT/'verification.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+            if EXPORT:
+                (OUT/'frames').mkdir(exist_ok=True)
+                frame = [0]
+                render = QtCore.QTimer(dialog)
+                def capture():
+                    try:
+                        i = frame[0]
+                        if i == 49:
+                            render.stop()
+                            slider.setValue(0)
+                            doc.save()
+                            (OUT/'export.done').write_text('49 vues FreeCAD generees',encoding='utf-8')
+                            return
+                        slider.setValue(round(-900*math.cos(math.pi*i/48)))
+                        G.updateGui()
+                        cam.nearDistance.setValue(1)
+                        cam.farDistance.setValue(2000)
+                        view.saveImage(str(OUT/'frames'/('%03d.png'%i)),1280,720,'White')
+                        frame[0] += 1
+                    except Exception:
+                        render.stop()
+                        (OUT/'error.txt').write_text(traceback.format_exc(),encoding='utf-8')
+                render.timeout.connect(capture)
+                G._demo3030 = (dialog,timer,render)
+                render.start(120)
+            else:
+                dialog.show()
+        except Exception:
+            (OUT/'error.txt').write_text(traceback.format_exc(),encoding='utf-8')
+    QtCore.QTimer.singleShot(2200, ready)
+except Exception:
+    (OUT/'error.txt').write_text(traceback.format_exc(),encoding='utf-8')

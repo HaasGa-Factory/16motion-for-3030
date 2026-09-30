@@ -1,0 +1,52 @@
+{
+  "source_sha256": "eb0a9a4643012f3401634908537f1ecedea3f2ea8396c8d66da344e5da079e0a",
+  "counts": {
+    "plate": 4,
+    "spacer": 16,
+    "bearing": 16,
+    "screw": 8,
+    "adjust": 8
+  },
+  "positions": [
+    {
+      "position_mm": -90,
+      "carriage_bounds_x_mm": [
+        -141.95,
+        -47.25
+      ]
+    },
+    {
+      "position_mm": 0,
+      "carriage_bounds_x_mm": [
+        -51.94999999999999,
+        42.75
+      ]
+    },
+    {
+      "position_mm": 90,
+      "carriage_bounds_x_mm": [
+        38.05000000000001,
+        132.75
+      ]
+    }
+  ],
+  "rail_length_mm": 320,
+  "travel_mm": 180,
+  "section_mm": [
+    29.83,
+    29.95
+  ],
+  "type": "translation imposee sans solveur physique",
+  "bearing_rotation": "non animee ; roulements representes par anneaux",
+  "source_unchanged": true,
+  "render_frames": 49,
+  "gif_frames": 96,
+  "gif_duration_seconds": 7.68,
+  "image_dimensions": [
+    1280,
+    720
+  ],
+  "reopen_geometry_and_expressions": "passed",
+  "position_control_after_reopen": "passed",
+  "gif_file": "Coulissement_3030_sans_texte.gif"
+}
