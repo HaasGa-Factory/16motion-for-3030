@@ -2,6 +2,7 @@
 
 Ce dépôt est un fork du projet [mosomate/16motion](https://github.com/mosomate/16motion). Il ajoute une [adaptation mesurée pour un profilé 3030 de 29,83 × 29,95 mm](3030/README.md), avec les modèles FreeCAD, les STL prêts à imprimer, les vues d'assemblage et une animation du coulissement.
 
+<<<<<<< HEAD
 > Cette variante correspond au profilé mesuré pour ce prototype. Tous les profilés appelés « 3030 » n'ont pas nécessairement la même section. Consultez les limites de validation avant impression.
 
 ![Animation du chariot 3030](3030/demonstration_client/Coulissement_3030_sans_texte.gif)
@@ -24,6 +25,32 @@ La distance horizontale entre les points est fixée à 23 mm. La distance vertic
 
 La section du profilé utilisé pour cette adaptation a été mesurée à **29,83 mm sur l'axe X** et **29,95 mm sur l'axe Y**. Ces deux valeurs restent séparées dans les modèles : aucune moyenne ni mise à l'échelle globale des STL n'a été appliquée.
 
+=======
+Version prête à imprimer : [3030Pro Sliding Carriage sur MakerWorld](https://makerworld.com/fr/models/3376063-3030pro-sliding-carriage#profileId-3840481).
+
+> Cette variante correspond au profilé mesuré pour ce prototype. Tous les profilés appelés « 3030 » n'ont pas nécessairement la même section. Consultez les limites de validation avant impression.
+
+![Animation du chariot 3030](3030/demonstration_client/Coulissement_3030_sans_texte.gif)
+
+## Qu'est-ce qu'un chariot 16Motion ?
+
+16Motion est un chariot configurable et imprimable en 3D pour les petits profilés aluminium jusqu'à 40 mm de largeur. Un chariot se compose de quatre plaques imprimées, assemblées autour du profilé, et de composants faciles à trouver : roulements 684 (4 × 9 × 4 mm), vis M3 et M4 et écrous M3.
+
+![Vue principale de 16Motion](https://raw.githubusercontent.com/mosomate/16motion/main/docs/cover.png)
+
+Chaque plaque possède huit points de fixation permettant de monter des outils et accessoires avec des vis et écrous M3. Ils sont répartis en deux groupes : quatre **points de fixation de plaque** indiqués par les flèches jaunes et quatre **points de fixation du chariot** indiqués par les flèches violettes.
+
+Les points de fixation du chariot traversent au moins deux plaques et augmentent donc la rigidité de l'ensemble. Si seuls les points de fixation de plaque sont utilisés, l'auteur recommande d'ajouter également des vis M3 × 16 dans quelques points de fixation du chariot.
+
+La distance horizontale entre les points est fixée à 23 mm. La distance verticale se calcule ainsi :
+
+`distance verticale = (largeur du profilé + 9 mm) / 2`
+
+## Adaptation 3030 de ce fork
+
+La section du profilé utilisé pour cette adaptation a été mesurée à **29,83 mm sur l'axe X** et **29,95 mm sur l'axe Y**. Ces deux valeurs restent séparées dans les modèles : aucune moyenne ni mise à l'échelle globale des STL n'a été appliquée.
+
+>>>>>>> BETA
 Pour construire un chariot complet :
 
 - imprimer **2 plaques X** depuis `Plaque_X_2983.stl` ;
