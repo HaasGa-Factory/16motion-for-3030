@@ -1,4 +1,4 @@
-# 16Motion — adaptation pour profilé aluminium 3030
+# Chariot pour profilé aluminium 3030
 
 Ce dépôt est un fork du projet [mosomate/16motion](https://github.com/mosomate/16motion). Il ajoute une [adaptation mesurée pour un profilé 3030 de 29,83 × 29,95 mm](3030/README.md), avec les modèles FreeCAD, les STL prêts à imprimer, les vues d'assemblage et une animation du coulissement.
 
@@ -6,7 +6,7 @@ Ce dépôt est un fork du projet [mosomate/16motion](https://github.com/mosomate
 
 ![Animation du chariot 3030](3030/demonstration_client/Coulissement_3030_sans_texte.gif)
 
-## Qu'est-ce qu'un chariot 16Motion ?
+## Description 16Motion ?
 
 16Motion est un chariot configurable et imprimable en 3D pour les petits profilés aluminium jusqu'à 40 mm de largeur. Un chariot se compose de quatre plaques imprimées, assemblées autour du profilé, et de composants faciles à trouver : roulements 684 (4 × 9 × 4 mm), vis M3 et M4 et écrous M3.
 
