@@ -32,6 +32,8 @@ Pour construire un chariot complet :
 
 Les modèles, les STL, la nomenclature et les contrôles réalisés se trouvent dans le [dossier 3030](3030/README.md).
 
+Pour imprimer directement le chariot sans préparer les plateaux soi-même, le modèle est également disponible sur [MakerWorld — 3030Pro Sliding Carriage](https://makerworld.com/fr/models/3376063-3030pro-sliding-carriage#profileId-3840481), avec le projet 3MF et son profil d'impression Bambu Studio.
+
 ## Avertissement
 
 **L'auteur original précise qu'il n'est pas ingénieur mécanicien et que cette conception n'a pas fait l'objet d'essais professionnels. L'impression, l'assemblage et l'utilisation se font sous la responsabilité de l'utilisateur.**
